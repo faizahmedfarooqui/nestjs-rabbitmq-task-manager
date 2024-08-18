@@ -1,6 +1,6 @@
 # Task Manager
 
-This is a simple task manager that allows you to add, delete, and mark tasks as complete.
+This is a simple task manager that allows you to run CRUD against task table.
 
 It is built using NestJS and TypeORM, and it uses RabbitMQ for event-driven communication between microservices.
 
