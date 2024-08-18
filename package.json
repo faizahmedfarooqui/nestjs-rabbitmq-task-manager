@@ -1,0 +1,16 @@
+{
+  "name": "@faizahmedfarooqui/task-manager",
+  "version": "0.0.1",
+  "description": "Task Manager Application",
+  "private": true,
+  "scripts": {
+    "start:nashville": "yarn workspace @faizahmedfarooqui/nashville-bff start",
+    "start:gallatin": "yarn workspace @faizahmedfarooqui/gallatin-task-manager start",
+    "start:ashland": "yarn workspace @faizahmedfarooqui/ashland-logger start"
+  },
+  "workspaces": [
+    "services/*"
+  ],
+  "author": "Faiz A. Farooqui <faizahmed.in@gmail.com>",
+  "license": "ISC"
+}

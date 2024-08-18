@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "9b489814-e6e0-4547-9589-ab8e66cf5dbe",
+		"name": "Task Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32187651"
+	},
+	"item": [
+		{
+			"name": "Create Task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Test Task #Last 1\",\n  \"description\": \"This is a test task\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Task by ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/tasks/43ec5f21-cdbe-423f-8a3c-a4eff758defc"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tasks (Paginated)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tasks?page=1&pageSize=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Task",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Updated Task #3\",\n  \"description\": \"This is an updated task\",\n  \"parentId\": \"307d7d2f-2826-48ef-b7a7-ef7e9ed07cfb\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/tasks/43ec5f21-cdbe-423f-8a3c-a4eff758defc"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Updated Task\",\n  \"description\": \"This is an updated task\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/tasks/4e157ef9-3a6a-4fa2-805c-9df680b3d4b3"
+			},
+			"response": []
+		}
+	]
+}
