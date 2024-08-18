@@ -81,7 +81,7 @@ Once the application is running, you can access the API at `http://localhost:300
 
 ### API Endpoints
 
-You can refer "TaskManager.postman_collection.json" file for the Postman collection.
+You can refer "[TaskManager.postman_collection.json](/TaskManager.v2.postman_collection.json)" file for the Postman collection.
 
 - **GET /tasks**: Retrieve all tasks (with Pagination)
 - **GET /tasks/{id}**: Retrieve a task
