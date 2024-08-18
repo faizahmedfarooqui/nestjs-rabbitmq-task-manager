@@ -1,10 +1,16 @@
 # Task Manager
 
-## Description
-
 This is a simple task manager that allows you to add, delete, and mark tasks as complete.
 
 It is built using NestJS and TypeORM, and it uses RabbitMQ for event-driven communication between microservices.
+
+![Architecture](/Architecture.png)
+
+- Nashville (Backend Facing Frontend) Microservice: Handles incoming requests from the client and forwards them to the Gallatin microservice.
+
+- Gallatin (Task Manager) Microservice: Handles task-related operations (CRUD) and emits events to the Ashland microservice.
+
+- Ashland (Logger) Microservice: Listens for events from the Gallatin microservice and logs them to the console.
 
 ## Features
 
@@ -48,8 +54,8 @@ Before you begin, ensure you have met the following requirements:
 
 4. **Configure Variables:**
 
-  1. Goto "services/gallatin-task-manager/src/app.module.ts" and update the RabbitMQ & PostgreSQL configs
-  2. Goto "services/ashland-logger/src/main.ts" and update the RabbitMQ configs
+    1. Goto "services/gallatin-task-manager/src/app.module.ts" and update the RabbitMQ & PostgreSQL configs
+    2. Goto "services/ashland-logger/src/main.ts" and update the RabbitMQ configs
 
 5. **Run the Nashville (Backend Facing Frontend) Microservice:**
 
