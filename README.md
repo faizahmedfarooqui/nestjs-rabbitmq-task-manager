@@ -7,18 +7,18 @@ It is built using NestJS and TypeORM, and it uses RabbitMQ for event-driven comm
 ## Architecture
 
 ```
-+----------+     HTTP/WebSocket     +----------------+
-|          | <--------------------- |                |
-|  Client  |                        | Nashville-BFF  |
-|          | ---------------------> |                |
-+----------+                        +----------------+
-                                           |
-                                           | gRPC
-                                           |
-                                           v
++----------+     HTTP/WebSocket     +-------------------------+
+|          | <--------------------- |                         |
+|  Client  |                        | Backend Facing Frontend |
+|          | ---------------------> |                         |
++----------+                        +-------------------------+
+                                              |
+                                              | gRPC
+                                              |
+                                              v
                               +------------------------+
                               |                        |
-                              | Gallatin Task Manager  |
+                              |     Task Manager       |
                               |                        |
                               +------------------------+
                                     |           |
@@ -26,19 +26,19 @@ It is built using NestJS and TypeORM, and it uses RabbitMQ for event-driven comm
                               ------            ------
                               |                       |
                               v                       v
-                        +-----------+           +------------+
-                        |           |           |            |
-                        | PostgreSQL|           | RabbitMQ   |
-                        |           |           |            |
-                        +-----------+           +------------+
+                        +------------+           +------------+
+                        |            |           |            |
+                        | PostgreSQL |           |  RabbitMQ  |
+                        |            |           |            |
+                        +----------- +           +------------+
                                                       |
                                                       |
                                                       v
-                                              +---------------+
-                                              |               |
-                                              | Ashland Logger|
-                                              |               |
-                                              +---------------+
+                                              +------------+
+                                              |            |
+                                              |  Logger    |
+                                              |            |
+                                              +------------+
 ```
 
 - Nashville (Backend Facing Frontend) Microservice: Handles incoming requests from the client and forwards them to the Gallatin microservice.
