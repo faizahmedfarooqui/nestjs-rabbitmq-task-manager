@@ -4,7 +4,42 @@ This is a simple task manager that allows you to run CRUD against task table usi
 
 It is built using NestJS and TypeORM, and it uses RabbitMQ for event-driven communication between microservices.
 
-![Architecture](/Architecture.png)
+## Architecture
+
+```
++----------+     HTTP/WebSocket     +----------------+
+|          | <--------------------- |                |
+|  Client  |                        | Nashville-BFF  |
+|          | ---------------------> |                |
++----------+                        +----------------+
+                                           |
+                                           | gRPC
+                                           |
+                                           v
+                              +------------------------+
+                              |                        |
+                              | Gallatin Task Manager  |
+                              |                        |
+                              +------------------------+
+                                    |           |
+                                    |           |
+                              ------            ------
+                              |                       |
+                              v                       v
+                        +-----------+           +------------+
+                        |           |           |            |
+                        | PostgreSQL|           | RabbitMQ   |
+                        |           |           |            |
+                        +-----------+           +------------+
+                                                      |
+                                                      |
+                                                      v
+                                              +---------------+
+                                              |               |
+                                              | Ashland Logger|
+                                              |               |
+                                              +---------------+
+```
 
 - Nashville (Backend Facing Frontend) Microservice: Handles incoming requests from the client and forwards them to the Gallatin microservice.
 
