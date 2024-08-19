@@ -79,14 +79,18 @@ Before you begin, ensure you have met the following requirements:
 
 To run tests, you can use the following command:
 
+1. **Run all tests of Gallatin Task Manager MicroService**
     ```bash
-    # Run all tests of Gallatin Task Manager MicroService
     yarn test:gallatin
+    ```
 
-    # Run all tests of Nashville BFF MicroService
-    yarn test:nashville
+2. **Run all tests of Nashville BFF MicroService**
+   ```bash
+   yarn test:nashville
+   ```
 
-    # Run all tests of Ashland Logger MicroService
+3. **Run all tests of Ashland Logger MicroService**
+    ```bash
     yarn test:ashland
     ```
 
