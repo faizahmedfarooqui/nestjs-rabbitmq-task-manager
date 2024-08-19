@@ -1,6 +1,6 @@
 # Task Manager
 
-This is a simple task manager that allows you to run CRUD against task table.
+This is a simple task manager that allows you to run CRUD against task table using HTTP as well as WebSocket.io.
 
 It is built using NestJS and TypeORM, and it uses RabbitMQ for event-driven communication between microservices.
 
@@ -11,6 +11,8 @@ It is built using NestJS and TypeORM, and it uses RabbitMQ for event-driven comm
 - Gallatin (Task Manager) Microservice: Handles task-related operations (CRUD) and emits events to the Ashland microservice.
 
 - Ashland (Logger) Microservice: Listens for events from the Gallatin microservice and logs them to the console.
+
+- Client Microservice: A simple client that interacts with the Nashville microservice over WebSocket.io.
 
 ## Features
 
@@ -75,6 +77,12 @@ Before you begin, ensure you have met the following requirements:
     yarn start:ashland
     ```
 
+8. **Run the Client Microservice:**
+
+    ```bash
+    yarn start:client
+    ```
+
 ## Running Tests
 
 To run tests, you can use the following command:
@@ -107,6 +115,26 @@ You can refer "[TaskManager.postman_collection.json](/TaskManager.v2.postman_col
 - **POST /tasks**: Create a new task
 - **DELETE /tasks/:id**: Delete a task by ID
 - **PUT /tasks/:id**: Update a Task by ID
+
+### WebSocket Client
+
+You can use the client to interact with the Nashville microservice over WebSocket.io.
+
+1. **Connect to the WebSocket server:**
+
+    ```bash
+    yarn start:client
+    ```
+
+2. **Use the following events to interact with the Nashville microservice:**
+
+    - createTask
+    - listAllTasks
+    - listTask
+    - updateTask
+    - deleteTask
+
+    > Refer to the [client.ts](/services/client/src/client.ts) file for more details.
 
 ## Contributing
 

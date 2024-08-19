@@ -1,0 +1,14 @@
+{
+  "name": "@faizahmedfarooqui/client",
+  "version": "0.0.1",
+  "description": "Client side code for WebSockets",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Faiz A. Farooqui <faizahmed.in@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io-client": "^4.7.5"
+  }
+}

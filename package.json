@@ -9,7 +9,8 @@
     "start:gallatin": "yarn workspace @faizahmedfarooqui/gallatin-task-manager start",
     "test:gallatin": "yarn workspace @faizahmedfarooqui/gallatin-task-manager test",
     "start:ashland": "yarn workspace @faizahmedfarooqui/ashland-logger start",
-    "test:ashland": "yarn workspace @faizahmedfarooqui/ashland-logger test"
+    "test:ashland": "yarn workspace @faizahmedfarooqui/ashland-logger test",
+    "start:client": "yarn workspace @faizahmedfarooqui/client start"
   },
   "workspaces": [
     "services/*"

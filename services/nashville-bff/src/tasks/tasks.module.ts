@@ -6,6 +6,7 @@
 
 import { join } from 'path';
 import { Module } from '@nestjs/common';
+import { TasksGateway } from './tasks.gateway';
 import { TasksController } from './tasks.controller';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { TasksService } from './tasks.service';
@@ -25,7 +26,7 @@ import { TasksService } from './tasks.service';
     ]),
   ],
   controllers: [TasksController],
-  providers: [TasksService],
+  providers: [TasksGateway, TasksService],
   exports: [TasksService],
 })
 
