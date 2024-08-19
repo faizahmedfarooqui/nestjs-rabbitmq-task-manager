@@ -5,8 +5,11 @@
   "private": true,
   "scripts": {
     "start:nashville": "yarn workspace @faizahmedfarooqui/nashville-bff start",
+    "test:nashville": "yarn workspace @faizahmedfarooqui/nashville-bff test",
     "start:gallatin": "yarn workspace @faizahmedfarooqui/gallatin-task-manager start",
-    "start:ashland": "yarn workspace @faizahmedfarooqui/ashland-logger start"
+    "test:gallatin": "yarn workspace @faizahmedfarooqui/gallatin-task-manager test",
+    "start:ashland": "yarn workspace @faizahmedfarooqui/ashland-logger start",
+    "test:ashland": "yarn workspace @faizahmedfarooqui/ashland-logger test"
   },
   "workspaces": [
     "services/*"

@@ -75,6 +75,21 @@ Before you begin, ensure you have met the following requirements:
     yarn start:ashland
     ```
 
+## Running Tests
+
+To run tests, you can use the following command:
+
+    ```bash
+    # Run all tests of Gallatin Task Manager MicroService
+    yarn test:gallatin
+
+    # Run all tests of Nashville BFF MicroService
+    yarn test:nashville
+
+    # Run all tests of Ashland Logger MicroService
+    yarn test:ashland
+    ```
+
 ## Usage
 
 Once the application is running, you can access the API at `http://localhost:3000`. Use a tool like Postman or cURL to interact with the API endpoints.

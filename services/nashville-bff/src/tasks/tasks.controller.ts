@@ -14,7 +14,7 @@ export class TasksController {
   constructor(private readonly tasksService: TasksService) {}
 
   @Post()
-  async createTask(@Body() createTaskDto: CreateTaskDto): Promise<any> {
+  async createTask(@Body() createTaskDto: CreateTaskDto) {
     const { title, description, parentId } = createTaskDto;
     return this.tasksService.createTask(title, description, parentId);
   }
@@ -23,23 +23,26 @@ export class TasksController {
   async listAllTasks(
     @Query('page') page: number = 1,
     @Query('pageSize') pageSize: number = 10
-  ): Promise<any> {
+  ) {
     return this.tasksService.listAllTasks(page, pageSize);
   }
 
   @Get(':id')
-  async listTask(@Param('id') id: string): Promise<any> {
+  async listTask(@Param('id') id: string) {
     return this.tasksService.listTask(id);
   }
 
   @Put(':id')
-  async updateTask(@Param('id') id: string, @Body() updateTaskDto: UpdateTaskDto): Promise<any> {
+  async updateTask(
+    @Param('id') id: string,
+    @Body() updateTaskDto: UpdateTaskDto
+  ) {
     const { title, description, parentId } = updateTaskDto;
     return this.tasksService.updateTask(id, title, description, parentId);
   }
 
   @Delete(':id')
-  async deleteTask(@Param('id') id: string): Promise<any> {
+  async deleteTask(@Param('id') id: string) {
     return this.tasksService.deleteTask(id);
   }
 }

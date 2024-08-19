@@ -14,10 +14,10 @@ import { Task } from './tasks/task.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: '0.0.0.0',
       port: 5432,
       username: 'postgres',
-      password: 'password',
+      password: 'goldtree9',
       database: 'tasks',
       entities: [Task],
       synchronize: true,
